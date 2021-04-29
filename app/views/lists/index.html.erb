@@ -1,0 +1,10 @@
+<div class="container">
+  <p><% @lists.each do |list| %></p>
+  <p><%= list.name %></p>
+  <p><%= link_to 'show', list_path(list.id)  %></p>
+  <p><% end %></p>
+</div>
+
+
+
+
