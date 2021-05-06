@@ -12,11 +12,15 @@
   <div class="row">
     <% @lists.each do |list| %>
       <div class="co-12 colsm-6 col-md-4">
-        <%= link_to list_path(list), class:'text-decoration-none' do %>
-          <div>
-            <%= list.name %>
+        <div class="card bg-light m-2 p-2">
+           <%= link_to list_path(list), class:'text-decoration-none' do %>
+             <div>
+               <%= list.name %>
+               <%= cl_image_tag(list.photo.key,
+         width: 200, height: 150, crop: :fill) %>
+             </div>
+        </div>
 
-          </div>
         <% end %>
       </div>
     <% end %>

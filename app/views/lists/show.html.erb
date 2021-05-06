@@ -12,13 +12,17 @@
           <div class="card-movie">
             <%= image_tag movie.poster_url, alt: movie.title, class: 'movie-img rounded-top w-25' %>
             <div class="card-movie-info">
-              <p> <%= movie.comment %> </p>
             </div>
           </div>
         </div>
       </div>
   </div>
   <% end %>
+  <% @list.reviews.each do |review| %>
+    <p> <%= review.comment%> </p>
+  <% end %>
 </div>
+
+<%= render 'reviews/form', review: @review %>
 
 <p><%= link_to 'back', lists_path %></p>
