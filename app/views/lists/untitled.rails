@@ -1,0 +1,19 @@
+<%= render 'reviews/form', review: @review %>
+
+
+        <h3>Create a new review</h3>
+        <%= simple_form_for review do |f| %>
+          <%= f.input :comment, placeholder: 'Drama' %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+
+
+
+<div class="card-product">
+  <%= cl_image_tag(list.photo.key,
+  width: 200, height: 150, crop: :fill) %>
+  <div class="card-product-infos">
+    <%= list.name %>
+  </div>
+</div>
+
