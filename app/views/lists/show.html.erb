@@ -15,6 +15,7 @@
               <%= image_tag movie.poster_url, alt: movie.title, class: 'movie-img w-25'%>
               <div class="card-movie-infos p-3">
                 <p><%= movie.overview %></p>
+                 <small class="flex-shrink-0"><%= link_to 'delete', bookmark_path(Bookmark.find_by(list: @list, movie: movie)), method: :delete, data: { confirm: "Are you sure you want to remove #{movie.title} from your #{@list.name} list"}, class: 'text-danger' %></small>
               </div>
             </div>
           </div>
@@ -26,3 +27,8 @@
 
 
 <p class="p-5"><%= link_to 'back', lists_path %></p>
+
+<p> <%= link_to 'add a new review', new_list_review_path(@list) %></p>
+
+
+

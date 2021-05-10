@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+  def new
+    @list = List.find(params[:list_id])
+    @review = Review.new
+  end
+
   def create
     @review = Review.new(review_params)
     @list = List.find(params[:list_id])
@@ -6,7 +11,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to list_path(@list)
     else
-       'lists/show'
+      render 'lists/show'
     end
   end
 
